@@ -39,11 +39,11 @@ class Movie extends Model
 
     }
 
-    public function goSingleMovie($id){
+    public function getSingleMovie($id){
         $baseUrl = env('TMDB_BASEURL');
         $apiKey = env('TMDB_APIKEY');
 
-        $combined = $baseUrl.'trending/movie/week?api_key='.$apiKey;
+        $combined = $baseUrl.'movie/'.$id.'?api_key='.$apiKey;
         $response = Http::get($combined)->json();
 
         return $response;

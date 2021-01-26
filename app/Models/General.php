@@ -10,6 +10,6 @@ class General extends Model
     use HasFactory;
 
     public function getCategories(){
-
+        
     }
 }

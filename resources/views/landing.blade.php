@@ -65,15 +65,15 @@
 
 <!-- End Carousel -->
 <!-- Featured - Popular -->
-<section id="">
-        <div class="container featured-popular">
+<section id="featured-popular">
+        <div class="container">
             <div class="row border-top-0 mx-md-n5">
             <div class="col">
                 <h2>Most Popular</h2>
             </div>
             </div>
         </div>
-</section>
+
 <!-- Movie Cards -->
 <div class="container-fluid">
 
@@ -96,6 +96,7 @@
 </div>
 
 </div>
+</section>
 <!-- End Movie Cards -->
 
 <!-- Trending -->

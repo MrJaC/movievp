@@ -1,0 +1,34 @@
+/* Hero image */
+
+#hero-image {
+    aheight: 460px;
+    width: 100%;
+}
+
+#featured-popular {
+    width: 100%;
+    background-color: #f7f1e3;
+}
+
+#overview {
+    height: 400px;
+    background-color: #f7f1e3;
+}
+
+#reviews {
+    height: 400px;
+    background-color: #ff5252;
+}
+
+
+/* footer stuff */
+
+#footer-main {
+    height: 300px;
+    background-color: #40407a;
+}
+
+.copy-right {
+    height: 40px;
+    background-color: #2c2c54;
+}
