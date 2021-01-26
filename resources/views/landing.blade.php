@@ -28,7 +28,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
                   <p class="text-truncate">{{ $s['overview']}}</p>
-                  <p><a class="btn btn-lg btn btn-light" href="#">View..</a></p>
+                  <p><a class="btn btn-lg btn btn-light" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
                   <p class="text-truncate">{{ $s['overview']}}</p>
-                  <p><a class="btn btn-lg btn btn-light" href="#">View..</a></p>
+                  <p><a class="btn btn-lg btn btn-light" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
                 </div>
               </div>
             </div>

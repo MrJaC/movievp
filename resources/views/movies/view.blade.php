@@ -1,12 +1,12 @@
 @extends('layouts.main')
 @section('content')
 <section id="hero-image">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col-12 px-0">
         <!-- Hero Image -->
         <div class="">
-            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="img-fluid" alt="...">
+            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="img-fluid w-100" alt="...">
         </div>
         <!-- End Hero Image-->
         </div>
@@ -16,15 +16,17 @@
 <section id="overview">
     <div class="container">
         <div class="row p-3 mb-5">
-            <div class="col-6">
+            <div class="col-6 text-left image">
+
+                <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
+                <h4><button type="button" class="btn btn-primary"><i class="bi bi-star"></i>Add to Watchlist</button></h4>
+            </div>
+            <div class="col-6 text-white">
                 <h5>Overview</h5>
                 <h3> {{ $data['original_title']}}</h3>
                 <p> {{ $data['overview']}}</p>
             </div>
-            <div class="col-6 text-right image">
-                <h4><button type="button" class="btn btn-primary"><i class="bi bi-star"></i>Add to Watchlist</button></h4>
-                <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
-            </div>
+
         </div>
         <div class="row">
             <div class="col-4">
