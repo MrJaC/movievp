@@ -15,8 +15,17 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Movies</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genres</a>
+
+
+
+            <div class="dropdown-menu">
+                @foreach ( $genres['genres'] as $g )
+              <a class="dropdown-item" href="#">{{ $g['name']}}</a>
+
+              @endforeach
+            </div>
           </li>
         </ul>
         <ul class="nav navbar-nav  justify-content-end">
