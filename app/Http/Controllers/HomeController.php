@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Movie;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $popularMovies = app(Movie::class)->getPopularMovies();
+
+        error_log(print_r($popularMovies,true));
+        $popularMovies;
+
         return view('home');
     }
 }
