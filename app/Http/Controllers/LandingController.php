@@ -16,12 +16,18 @@ class LandingController extends Controller
 
 
         //get popular movies
-        $popularMovies = app(Movie::class)->getPopularMovies();
+        $data = app(Movie::class)->getPopularMovies();
+        $trendingData = app(Movie::class)->getTrendingMovies();
+
+
+
+        //slice data
+        $popularMovies = array_slice($data['results'],0,12,true);
         //get x amount of slider
-        $slider = array_slice($popularMovies['results'],0, 4, true);
+        $slider = array_slice($data['results'],0, 4, true);
 
         error_log(print_r($slider,true));
 
-        return view('landing', [ 'popular' => $popularMovies, 'slider' => $slider]);
+        return view('landing', [ 'popular' => $popularMovies, 'slider' => $slider, 'trending' => $trendingData]);
     }
 }

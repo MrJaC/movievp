@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\App;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 
+
+
 class Movie extends Model
 {
 
@@ -29,10 +31,21 @@ class Movie extends Model
         $baseUrl = env('TMDB_BASEURL');
         $apiKey = env('TMDB_APIKEY');
 
+        $combined = $baseUrl.'trending/movie/week?api_key='.$apiKey;
+        $response = Http::get($combined)->json();
+
+
+        return $response;
 
     }
 
     public function goSingleMovie($id){
+        $baseUrl = env('TMDB_BASEURL');
+        $apiKey = env('TMDB_APIKEY');
 
+        $combined = $baseUrl.'trending/movie/week?api_key='.$apiKey;
+        $response = Http::get($combined)->json();
+
+        return $response;
     }
 }

@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+
+//Default route
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('landing');
 
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Movie Route
+
+Route::group(['prefix' => 'view-movie'], function () {
+    Route::get('/{id}/{title}', [\App\Http\Controllers\MovieController::class, 'index'])->name('view-movie');
+});

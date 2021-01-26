@@ -78,7 +78,7 @@
 <div class="container-fluid">
 
 <div class="row justify-content-center">
-    @foreach ( $popular['results'] as $pop )
+    @foreach ( $popular as $pop )
     <div class="col-md-2">
         <div class="card-group">
         <div class="card text-white">
@@ -86,7 +86,7 @@
             <div class="card-img-overlay ">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
               <p class="card-text text-truncate">{{ $pop['overview']}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
@@ -96,5 +96,8 @@
 </div>
 
 </div>
-<!-- End Movie Cards
+<!-- End Movie Cards -->
+
+<!-- Trending -->
+<!-- End Trending -->
 @endsection
