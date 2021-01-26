@@ -48,4 +48,15 @@ class Movie extends Model
 
         return $response;
     }
+
+    public function getMovieReviews($id){
+
+        $baseUrl = env('TMDB_BASEURL');
+        $apiKey = env('TMDB_APIKEY');
+
+        $combined = $baseUrl.'movie/'.$id.'/reviews?api_key='.$apiKey;
+        $response = Http::get($combined)->json();
+
+        return $response;
+    }
 }

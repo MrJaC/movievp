@@ -12,8 +12,14 @@ class MovieController extends Controller
 
         $movieData = app(Movie::class)->getSingleMovie($id);
 
+
+        $movieReview = app(Movie::class)->getMovieReviews($id);
+        //slice movie review because lazy.
+
+        $mR = array_slice($movieReview['results'],0, 4, true);
         error_log(print_r($movieData,true));
-        return view('movies.view', ['data' =>  $movieData]);
+        error_log(print_r($mR,true));
+        return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
 
     }
 }
