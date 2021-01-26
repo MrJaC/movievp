@@ -23,11 +23,12 @@ class LandingController extends Controller
 
         //slice data
         $popularMovies = array_slice($data['results'],0,12,true);
+        $trending = array_slice($trendingData['results'],0,12,true);
         //get x amount of slider
         $slider = array_slice($data['results'],0, 4, true);
 
-        error_log(print_r($slider,true));
+        error_log(print_r($trendingData,true));
 
-        return view('landing', [ 'popular' => $popularMovies, 'slider' => $slider, 'trending' => $trendingData]);
+        return view('landing', [ 'popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending]);
     }
 }

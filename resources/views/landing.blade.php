@@ -67,9 +67,9 @@
 <!-- Featured - Popular -->
 <section id="featured-popular">
         <div class="container">
-            <div class="row border-top-0 mx-md-n5">
+            <div class="row border-top-0 mx-md-n5 p-5">
             <div class="col">
-                <h2>Most Popular</h2>
+                <h3>Most Popular Movies</h3>
             </div>
             </div>
         </div>
@@ -100,5 +100,33 @@
 <!-- End Movie Cards -->
 
 <!-- Trending -->
+<section id="trending">
+    <div class="container">
+        <div class="row border-top-0 mx-md-n5 p-5">
+        <div class="col">
+            <h3>Currently Trending this Week</h3>
+        </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            @foreach ( $trending as $trend )
+            <div class="col-md-2">
+                <div class="card-group">
+                <div class="card text-white">
+                    <img src="https://image.tmdb.org/t/p/original{{ $trend['poster_path'] }}" class="card-img-top" alt="...">
+                    <div class="card-img-overlay d-flex flex-column">
+                      <h5 class="card-title">{{ $trend['original_title']}}</h5>
+                      <p class="card-text text-truncate">{{ $trend['overview']}}</p>
+                      <a href="{{ route('view-movie', ['id' => $trend['id'], 'title' => $trend['original_title']])}}" class="btn btn-primary mt-auto">View </a>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 <!-- End Trending -->
 @endsection
