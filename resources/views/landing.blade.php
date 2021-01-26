@@ -83,10 +83,10 @@
         <div class="card-group">
         <div class="card text-white">
             <img src="https://image.tmdb.org/t/p/original{{ $pop['poster_path'] }}" class="card-img-top" alt="...">
-            <div class="card-img-overlay ">
+            <div class="card-img-overlay d-flex flex-column">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
               <p class="card-text text-truncate">{{ $pop['overview']}}</p>
-              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-primary">Go somewhere</a>
+              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-primary mt-auto">View </a>
             </div>
           </div>
         </div>

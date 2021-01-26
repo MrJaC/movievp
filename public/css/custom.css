@@ -1,8 +1,9 @@
 /* Hero image */
 
 #hero-image {
-    aheight: 460px;
+    height: 100%;
     width: 100%;
+    max-height: 800px;
 }
 
 #featured-popular {
@@ -11,13 +12,27 @@
 }
 
 #overview {
-    height: 400px;
+    height: 100%;
     background-color: #f7f1e3;
+    max-height: 800px;
 }
 
 #reviews {
     height: 400px;
     background-color: #ff5252;
+}
+
+
+/*img size - movie view*/
+
+.image img {
+    height: 340px;
+    width: 260px;
+}
+
+.logo-company {
+    height: 80px;
+    width: 200px;
 }
 
 
