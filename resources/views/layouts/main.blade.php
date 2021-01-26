@@ -14,7 +14,9 @@
       <div class="container">
     @yield('content')
       </div>
+      @include('layouts.partials.footer')
       <!-- End Content -->
+
     @include('layouts.partials.footer-scripts')
   </body>
 </html>
