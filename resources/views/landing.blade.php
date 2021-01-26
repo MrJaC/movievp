@@ -81,7 +81,7 @@
     @foreach ( $popular as $pop )
     <div class="col-md-2">
         <div class="card-group">
-        <div class="card text-white">
+        <div class="card text-white hover-img">
             <img src="https://image.tmdb.org/t/p/original{{ $pop['poster_path'] }}" class="card-img-top" alt="...">
             <div class="card-img-overlay d-flex flex-column">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
@@ -109,11 +109,11 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ">
             @foreach ( $trending as $trend )
             <div class="col-md-2">
                 <div class="card-group">
-                <div class="card text-white">
+                <div class="card text-white  hover-img">
                     <img src="https://image.tmdb.org/t/p/original{{ $trend['poster_path'] }}" class="card-img-top" alt="...">
                     <div class="card-img-overlay d-flex flex-column">
                       <h5 class="card-title">{{ $trend['original_title']}}</h5>
