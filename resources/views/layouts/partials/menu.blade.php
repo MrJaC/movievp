@@ -1,3 +1,9 @@
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,3 +36,10 @@
       </form>
     </div>
   </nav>
+</div>
+        </div>
+    </div>
+<!-- End Navbar -->
+
+</header>
+<!-- End Header -->

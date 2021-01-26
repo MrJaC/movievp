@@ -9,7 +9,12 @@
     @include('layouts.partials.header-scripts')
   </head>
   <body>
+      @include('layouts.partials.menu')
+      <!-- Content -->
+      <div class="container">
     @yield('content')
+      </div>
+      <!-- End Content -->
     @include('layouts.partials.footer-scripts')
   </body>
 </html>
