@@ -17,11 +17,22 @@ class Movie extends Model
         $apiKey = env('TMDB_APIKEY');
 
 
-        error_log(print_r($baseUrl,true));
+
         $combined = $baseUrl.'movie/popular?api_key='.$apiKey;
         $response = Http::get($combined)->json();
-        error_log(print_r($combined,true));
+
         return  $response;
+
+    }
+
+    public function getTrendingMovies(){
+        $baseUrl = env('TMDB_BASEURL');
+        $apiKey = env('TMDB_APIKEY');
+
+
+    }
+
+    public function goSingleMovie($id){
 
     }
 }

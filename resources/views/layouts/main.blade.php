@@ -11,9 +11,7 @@
   <body>
       @include('layouts.partials.menu')
       <!-- Content -->
-      <div class="container">
     @yield('content')
-      </div>
       @include('layouts.partials.footer')
       <!-- End Content -->
 

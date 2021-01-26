@@ -5,45 +5,54 @@
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+          @foreach ($slider as $s )
+          @if ($loop->first)
+          <li data-target="#myCarousel" data-slide-to="{{ $s['id'] }}" class="active"></li>
+          @else
+          <li data-target="#myCarousel" data-slide-to="{{ $s['id'] }}"></li>
+          @endif
+
+          @endforeach
+
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title> </title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg>
+          @foreach ($slider as $s )
 
-          <div class="container">
-            <div class="carousel-caption text-left">
-              <h1>Example headline.</h1>
-              <p>Some representative placeholder content for the first slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title> </title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg>
 
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title> </title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg>
 
-          <div class="container">
-            <div class="carousel-caption text-right">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            @if ($loop->first)
+            <div class="carousel-item active">
+                <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
+
+            <div class="container">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>{{ $s['original_title']}}</h1>
+                  <p class="text-truncate">{{ $s['overview']}}</p>
+                  <p><a class="btn btn-lg btn btn-light" href="#">View..</a></p>
+                </div>
+              </div>
             </div>
-          </div>
+            @else
+            <div class="carousel-item">
+                <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
+
+            <div class="container">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>{{ $s['original_title']}}</h1>
+                  <p class="text-truncate">{{ $s['overview']}}</p>
+                  <p><a class="btn btn-lg btn btn-light" href="#">View..</a></p>
+                </div>
+              </div>
+            </div>
+            @endif
+
+
+
+
+          @endforeach
         </div>
-      </div>
+
+
       <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -55,23 +64,37 @@
     </div>
 
 <!-- End Carousel -->
+<!-- Featured - Popular -->
+<section id="">
+        <div class="container featured-popular">
+            <div class="row border-top-0 mx-md-n5">
+            <div class="col">
+                <h2>Most Popular</h2>
+            </div>
+            </div>
+        </div>
+</section>
 <!-- Movie Cards -->
-@foreach ( $popular['results'] as $pop )
-<div class="row justify-content-center">
-    <div class="col-md-4">
+<div class="container-fluid">
 
-        <div class="card" style="width: 18rem;">
+<div class="row justify-content-center">
+    @foreach ( $popular['results'] as $pop )
+    <div class="col-md-2">
+        <div class="card-group">
+        <div class="card text-white">
             <img src="https://image.tmdb.org/t/p/original{{ $pop['poster_path'] }}" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-img-overlay ">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
-              <p class="card-text">{{ $pop['overview']}}</p>
+              <p class="card-text text-truncate">{{ $pop['overview']}}</p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-
+        </div>
 
     </div>
+    @endforeach
 </div>
-@endforeach
+
+</div>
 <!-- End Movie Cards
 @endsection
