@@ -66,11 +66,12 @@
             <h4>Reviews</h4>
         </div>
         </div>
-        @foreach ($reviews as $r )
 
 
-        <div class="row">
-            <div class="col-sm-6">
+
+        <div class="row justify-content-center">
+            @foreach ($reviews as $r )
+            <div class="col-md-6">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                       <div class="col-md-4">
@@ -82,34 +83,17 @@
                           <p class="card-text text-truncate">{{$r['content']}}</p>
                           <p class="card-text"><small class="text-muted">Rating: </small></p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer bg-light text-right">
                            <a href="{{ $r['url']}}">Read more..</a>
+                           <small></small>
                           </div>
                       </div>
                     </div>
                   </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="..." alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$r['author']}}</h5>
-                            <p class="card-text text-truncate">{{$r['content']}}</p>
-                            <p class="card-text"><small class="text-muted">Rating: </small></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{{ $r['url']}}">Read more..</a>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-          </div>
-          @endforeach
+            @endforeach
+        </div>
+
     </div>
 </section>
 @endsection
