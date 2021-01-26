@@ -64,6 +64,8 @@
     </div>
 
 <!-- End Carousel -->
+<!-- Categories -->
+<!-- End Categories -->
 <!-- Featured - Popular -->
 <section id="featured-popular">
         <div class="container">

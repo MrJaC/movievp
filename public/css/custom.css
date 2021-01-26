@@ -64,3 +64,8 @@
     transform: scale(1.2);
     filter: grayscale(80%);
 }
+
+#cat-fas {
+    width: 80px;
+    height: 80px;
+}
