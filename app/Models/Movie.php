@@ -67,8 +67,8 @@ class Movie extends Model
         $baseUrl = env('TMDB_BASEURL');
         $apiKey = env('TMDB_APIKEY');
 
-        $combined = $baseUrl . 'discover/movie?api_key=' . $apiKey . 'language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' . $id;
-
+        $combined = $baseUrl . 'discover/movie?api_key=' . $apiKey . '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' . $id;
+        error_log(print_r($combined,true));
         $response = Http::get($combined)->json();
 
         return $response;
