@@ -54,7 +54,8 @@ class MovieController extends Controller
         $data = array(
             'user_id' => $id,
             'movie_id' => $request->id,
-            'title' => $request->title
+            'title' => $request->title,
+            'image_path' => $request->image
 
         );
         error_log(print_r($data,true));

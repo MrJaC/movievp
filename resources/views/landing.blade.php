@@ -101,14 +101,14 @@
 <!-- Trending -->
 <section id="trending">
     <div class="container">
-        <div class="row border-top-0 mx-md-n5 p-5">
+        <div class="row border-top-0 mx-md-n5 p-5 ">
         <div class="col">
             <h3>Currently Trending this Week</h3>
         </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row justify-content-center ">
+        <div class="row justify-content-center pb-5 ">
             @foreach ( $trending as $trend )
             <div class="col-md-2">
                 <div class="card-group">
@@ -117,7 +117,7 @@
                     <div class="card-img-overlay d-flex flex-column">
                       <h5 class="card-title">{{ $trend['original_title']}}</h5>
                       <p class="card-text text-truncate">{{ $trend['overview']}}</p>
-                      <a href="{{ route('view-movie', ['id' => $trend['id'], 'title' => $trend['original_title']])}}" class="btn btn-primary mt-auto">View </a>
+                      <a href="{{ route('view-movie', ['id' => $trend['id'], 'title' => $trend['original_title']])}}" class="btn btn-dark mt-auto">View </a>
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,7 @@
 
 #reviews {
     height: auto;
-    background-color: #ff5252;
+    background-color: #ecf0f1;
 }
 
 
@@ -33,6 +33,22 @@
 .logo-company {
     height: 80px;
     width: 200px;
+}
+
+
+/* banner wl */
+
+#wl-banner {
+    height: 260px;
+    background-color: #ecf0f1;
+}
+
+
+/* img size - wl*/
+
+.img-wl img {
+    height: 80px;
+    width: 80px;
 }
 
 
