@@ -29,5 +29,5 @@ Route::group(['prefix' => 'view-movie'], function () {
 });
 //Dashboard Route
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 });

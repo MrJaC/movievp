@@ -25,11 +25,11 @@ class HomeController extends Controller
     {
 
 
-        return view('home');
+        return redirect('dashboard');
     }
 
     public function dashboard(){
 
-        return view('');
+        return view('dashboard.view');
     }
 }
