@@ -32,7 +32,7 @@ class LandingController extends Controller
         //get x amount of slider
         $slider = array_slice($data['results'], 0, 4, true);
 
-        //error_log(print_r($trendingData, true));
+
 
         return view('landing', ['popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending,]);
     }

@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
-
-
     /**
      * index
      *
@@ -19,8 +17,6 @@ class MovieController extends Controller
      */
     public function index($id, $title)
     {
-
-
 
         if (Auth::user()) {
             $userId = Auth::id();
@@ -33,7 +29,7 @@ class MovieController extends Controller
             $movieData = app(Movie::class)->getSingleMovie($id);
             $movieReview = app(Movie::class)->getMovieReviews($id);
             $check = app(Movie::class)->checkWLM($data);
-            //slice movie review because lazy.
+            //slice movie review
             error_log(print_r($check, true));
             $mR = array_slice($movieReview['results'], 0, 4, true);
 
@@ -41,7 +37,7 @@ class MovieController extends Controller
         } else {
             $movieData = app(Movie::class)->getSingleMovie($id);
             $movieReview = app(Movie::class)->getMovieReviews($id);
-            //slice movie review because lazy.
+            //slice movie review
 
             $mR = array_slice($movieReview['results'], 0, 4, true);
 
@@ -60,7 +56,6 @@ class MovieController extends Controller
     {
 
         //check user is authed
-
         $id = Auth::id();
         //into array
         $data = array(
@@ -73,8 +68,6 @@ class MovieController extends Controller
         error_log(print_r($data, true));
         $insert = app(Movie::class)->updateWatchListMovie($data);
         if ($insert == "1") {
-            error_log(print_r($insert, true));
-
             return response()->json(['success' => 'Added to Watchlist!']);
         } else {
 
