@@ -23,7 +23,7 @@
                    Sign in to watch list
                 @else
 
-                <button type="submit" data-id="{{ $data['id'] }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button>
+                <button type="submit" data-id="{{ $data['id'] }}" data-name="{{ $data['original_title'] }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button>
                @endguest
 
 

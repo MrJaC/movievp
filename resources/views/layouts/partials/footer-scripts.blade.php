@@ -14,11 +14,14 @@
 
         e.preventDefault();
         var id = $('#movie-id').attr('data-id');
-
+        var name = $('#movie-id').attr('data-name');
         $.ajax({
             type: 'POST',
             url: "{{ route('wl-update') }}",
-            data: { id: id },
+            data: {
+                id: id,
+                name: name
+            },
 
             success: function(data) {
                 alert(data.success);
