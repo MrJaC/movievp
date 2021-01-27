@@ -22,7 +22,7 @@
 
             <div class="dropdown-menu">
                 @foreach ( $genres['genres'] as $g )
-              <a class="dropdown-item" href="#">{{ $g['name']}}</a>
+              <a class="dropdown-item" href="">{{ $g['name']}}</a>
 
               @endforeach
             </div>

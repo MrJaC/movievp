@@ -28,7 +28,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
                   <p class="text-truncate">{{ $s['overview']}}</p>
-                  <p><a class="btn btn-lg btn btn-light" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
+                  <p><a class="btn btn-lg btn-md btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
                   <p class="text-truncate">{{ $s['overview']}}</p>
-                  <p><a class="btn btn-lg btn btn-light" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
+                  <p><a class="btn btn-md btn btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View</a></p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
             <div class="card-img-overlay d-flex flex-column">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
               <p class="card-text text-truncate">{{ $pop['overview']}}</p>
-              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-primary mt-auto">View </a>
+              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-dark mt-auto">View </a>
             </div>
           </div>
         </div>
