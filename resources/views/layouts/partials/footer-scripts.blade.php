@@ -26,9 +26,7 @@
             },
 
             success: function(data) {
-               if(data.success){
-
-               }
+                setInterval('location.reload()', 1000);
             },
             error: function(data){
                 alert(error.failed);
