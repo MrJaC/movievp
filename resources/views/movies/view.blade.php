@@ -1,21 +1,21 @@
 @extends('layouts.main')
 @section('content')
-<section id="hero-image">
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 px-0">
         <!-- Hero Image -->
-        <div class="">
-            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="img-fluid w-100" alt="...">
-        </div>
-        <!-- End Hero Image-->
+        <div class="banner">
+        <div class="banner-img-h">
+            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="d-block w-100" alt="...">
         </div>
     </div>
 </div>
-</section>
+        <!-- End Hero Image-->
+</div>
+
 <section id="overview">
     <div class="container">
-        <div class="row p-3 mb-5">
+        <div class="row p-3 mb-5 justify-content-center">
             <div class="col-6 text-left image">
 
                 <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
@@ -41,7 +41,7 @@
             <div class="col-4">
 
             </div>
-            <div class="col-4">
+            <div class="col-4 text-white">
 
                     <h1 class="display-4">Budget: {{ $data['budget']}}</h1>
 

@@ -25,7 +25,7 @@
                 <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
 
             <div class="container">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
                   <h1>{{ $s['original_title']}}</h1>
                   <p class="text-truncate">{{ $s['overview']}}</p>
                   <p><a class="btn btn-lg btn-md btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
