@@ -38,5 +38,5 @@ Route::group(['prefix' => 'dashboard'], function () {
 //Genres
 
 Route::group(['prefix' => 'genre'], function () {
-    Route::get('/genre/{id}/{name}', [\App\Http\Controllers\GenreController::class, 'index'])->name('genre');
+    Route::get('/genre/{id}/{name}', [\App\Http\Controllers\GenresController::class, 'index'])->name('genre');
 });

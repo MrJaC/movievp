@@ -12,17 +12,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Movies</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genres</a>
 
-
-
             <div class="dropdown-menu">
                 @foreach ( $genres['genres'] as $g )
-              <a class="dropdown-item" href="">{{ $g['name']}}</a>
+              <a class="dropdown-item" href="{{ route('genre', ['id' => $g['id'], 'name' => $g['name']])}}">{{ $g['name']}}</a>
 
               @endforeach
             </div>
