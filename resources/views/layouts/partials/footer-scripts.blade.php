@@ -20,12 +20,16 @@
             url: "{{ route('wl-update') }}",
             data: {
                 id: id,
-                name: name
+                title: name
             },
 
             success: function(data) {
                 alert(data.success);
+            },
+            error: function(data){
+                alert(error.failed);
             }
+
         });
 
     });

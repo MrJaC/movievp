@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\App;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
-
+use DB;
 
 
 class Movie extends Model
@@ -58,5 +58,18 @@ class Movie extends Model
         $response = Http::get($combined)->json();
 
         return $response;
+    }
+
+    public function updateWatchListMovie($data){
+
+
+        if($a = DB::table('watchlist')->insert($data)){
+            return true;
+            error_log(print_r($a,true));
+        }else{
+            return false;
+        }
+
+
     }
 }
