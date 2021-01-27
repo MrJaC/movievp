@@ -42,9 +42,9 @@
 
             </div>
             <div class="col-4">
-                <ul>
-                    <li> Budget: {{ $data['budget']}}</li>
-                </ul>
+
+                    <h1 class="display-4">Budget: {{ $data['budget']}}</h1>
+
             </div>
             <div class="col-4">
 

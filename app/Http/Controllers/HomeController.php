@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        return redirect('dashboard');
+        return redirect('/');
     }
 
     public function dashboard()
