@@ -76,4 +76,12 @@ class Movie extends Model
         }
 
     }
+
+    public function getWatchListData($id){
+
+        //get user watch list
+
+        $data = DB::table('watchlist')->select()->where('watchlist.user_id', '=' , $id)->get();
+        return $data;
+    }
 }
