@@ -25,7 +25,7 @@
                 <h3> {{ $data['original_title']}}</h3>
                 <p> {{ $data['overview']}}</p>
                 @guest
-                Sign in to watch list
+                Sign in for watch list
              @else
              @if ($check == 1)
              <button type="submit" data-id="{{ $data['id'] }}" data-name="{{ $data['original_title'] }}" data-image="{{ $data['poster_path'] }}" id="movie-id" class="btn btn-primary btn-submit text-center"><i class="bi bi-star"></i> Remove </button>
