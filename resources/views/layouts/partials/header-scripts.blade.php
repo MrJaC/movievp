@@ -2,3 +2,4 @@
 
 <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<meta name="csrf-token" content="{{ csrf_token() }}" />

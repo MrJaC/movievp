@@ -21,4 +21,14 @@ class MovieController extends Controller
         return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
 
     }
+
+
+    public function watchListARP(Request $request){
+
+        $input = $request->all();
+
+        error_log(print_r($input,true));
+
+        return response()->json(['success' => 'got']);
+    }
 }

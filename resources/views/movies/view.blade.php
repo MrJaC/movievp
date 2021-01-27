@@ -19,7 +19,7 @@
             <div class="col-6 text-left image">
 
                 <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
-                <button type="button" class="btn btn-primary"><i class="bi bi-star"></i>Add to Watchlist</button>
+                <button type="button" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist</button>
             </div>
             <div class="col-6 text-white">
                 <h5>Overview</h5>
@@ -66,9 +66,6 @@
             <h4>Reviews</h4>
         </div>
         </div>
-
-
-
         <div class="row justify-content-center">
             @foreach ($reviews as $r )
             <div class="col-md-6">

@@ -26,6 +26,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix' => 'view-movie'], function () {
     Route::get('/{id}/{title}', [\App\Http\Controllers\MovieController::class, 'index'])->name('view-movie');
+
+    //post
+    Route::post('watch-list', [\App\Http\Controllers\MovieController::class, 'MovieController@watchListARP'])->name('watch-list-post');
 });
 //Dashboard Route
 Route::group(['prefix' => 'dashboard'], function () {
