@@ -34,3 +34,9 @@ Route::group(['prefix' => 'view-movie'], function () {
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 });
+
+//Genres
+
+Route::group(['prefix' => 'genre'], function () {
+    Route::get('/genre/{id}/{name}', [\App\Http\Controllers\GenreController::class, 'index'])->name('genre');
+});

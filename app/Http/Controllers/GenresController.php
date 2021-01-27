@@ -10,5 +10,7 @@ class GenresController extends Controller
 
     public function index(){
 
+
+        return view('genre.view');
     }
 }
