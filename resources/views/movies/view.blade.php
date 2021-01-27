@@ -19,7 +19,14 @@
             <div class="col-6 text-left image">
 
                 <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
-                <button type="button" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist</button>
+               @guest
+                   Sign in to watch list
+                @else
+
+                <button type="submit" data-id="{{ $data['id'] }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button>
+               @endguest
+
+
             </div>
             <div class="col-6 text-white">
                 <h5>Overview</h5>

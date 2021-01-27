@@ -13,12 +13,13 @@
 
 
         e.preventDefault();
-        var test = "test1";
+        var id = $('#movie-id').attr('data-id');
 
         $.ajax({
             type: 'POST',
             url: "{{ route('wl-update') }}",
-            data: { test: test },
+            data: { id: id },
+
             success: function(data) {
                 alert(data.success);
             }

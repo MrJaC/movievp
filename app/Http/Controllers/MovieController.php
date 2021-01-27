@@ -27,6 +27,8 @@ class MovieController extends Controller
 
         $input = $request->all();
 
+
+
         error_log(print_r($input,true));
 
         return response()->json(['success' => 'got']);
