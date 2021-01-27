@@ -25,6 +25,7 @@
 
             success: function(data) {
                 alert(data.success);
+                location.reload;
             },
             error: function(data){
                 alert(error.failed);

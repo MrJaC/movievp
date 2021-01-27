@@ -15,30 +15,24 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Action</th>
+                    <th scope="col">Movie Id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Added</th>
 
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ( $data as $d )
+
+
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{$d->id}}</th>
+                    <th scope="row"><button type="submit" data-id="{{ $d->movie_id }}" data-name="{{ $d->title }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button></th>
+                    <th scope="row">{{$d->movie_id}}</th>
+                    <th scope="row">{{$d->title}}</th>
+                    <th scope="row">{{$d->created_at}}</th>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
