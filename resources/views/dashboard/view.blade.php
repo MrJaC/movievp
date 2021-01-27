@@ -15,6 +15,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Action</th>
+                    <th scope="col">View</th>
                     <th scope="col">Movie Id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Added</th>
@@ -26,11 +27,12 @@
 
 
                   <tr>
-                    <th scope="row">{{$d->id}}</th>
-                    <th scope="row"><button type="submit" data-id="{{ $d->movie_id }}" data-name="{{ $d->title }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button></th>
-                    <th scope="row">{{$d->movie_id}}</th>
-                    <th scope="row">{{$d->title}}</th>
-                    <th scope="row">{{$d->created_at}}</th>
+                    <td>{{$d->id}}</td>
+                    <td><button type="submit" data-id="{{ $d->movie_id }}" data-name="{{ $d->title }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-trash"></i></button></td>
+                    <td><a href="{{ route('view-movie', ['id' => $d->movie_id, 'title' => $d->title])}}">View</a></td>
+                    <td>{{$d->movie_id}}</td>
+                    <td>{{$d->title}}</td>
+                    <td>{{$d->created_at}}</td>
                   </tr>
                   @endforeach
                 </tbody>

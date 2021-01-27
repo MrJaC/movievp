@@ -11,15 +11,36 @@ class MovieController extends Controller
 
     public function index($id, $title){
 
-        $movieData = app(Movie::class)->getSingleMovie($id);
 
 
-        $movieReview = app(Movie::class)->getMovieReviews($id);
-        //slice movie review because lazy.
+        if(Auth::user()){
+            $userId = Auth::id();
+            $data = array(
+                'user_id' =>  $userId,
+                'movie_id' => $id,
+                'title' => $title
 
-        $mR = array_slice($movieReview['results'],0, 4, true);
+            );
+            $movieData = app(Movie::class)->getSingleMovie($id);
+            $movieReview = app(Movie::class)->getMovieReviews($id);
+            $check = app(Movie::class)->checkWLM($data);
+            //slice movie review because lazy.
+            error_log(print_r($check,true));
+            $mR = array_slice($movieReview['results'],0, 4, true);
 
-        return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
+            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR, 'check' => $check]);
+        }else{
+            $movieData = app(Movie::class)->getSingleMovie($id);
+            $movieReview = app(Movie::class)->getMovieReviews($id);
+            //slice movie review because lazy.
+
+            $mR = array_slice($movieReview['results'],0, 4, true);
+
+            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
+        }
+
+
+
 
     }
 

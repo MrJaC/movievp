@@ -22,8 +22,12 @@
                @guest
                    Sign in to watch list
                 @else
-
+                @if ($check == 1)
+                <button type="submit" data-id="{{ $data['id'] }}" data-name="{{ $data['original_title'] }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Remove </button>
+                @else
                 <button type="submit" data-id="{{ $data['id'] }}" data-name="{{ $data['original_title'] }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-star"></i>Add to Watchlist </button>
+                @endif
+
                @endguest
 
 

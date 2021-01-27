@@ -76,6 +76,11 @@ class Movie extends Model
         }
 
     }
+    public function checkWLM($data){
+        if ($a = DB::table('watchlist')->where($data, 1)->exists()) {
+            return true;
+        }
+    }
 
     public function getWatchListData($id){
 
