@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(191);
 
-        //testing
+        //Menu item
         $genres = app(General::class)->getCategories();
 
         View::share('genres', $genres);
