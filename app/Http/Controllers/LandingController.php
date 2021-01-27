@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
+
 use App\Models\Movie;
 use App\Models\General;
 
@@ -22,7 +22,7 @@ class LandingController extends Controller
         //get popular movies
         $data = app(Movie::class)->getPopularMovies();
         $trendingData = app(Movie::class)->getTrendingMovies();
-        $genres = app(General::class)->getCategories();
+
 
 
         //slice data
@@ -33,6 +33,6 @@ class LandingController extends Controller
 
         error_log(print_r($trendingData, true));
 
-        return view('landing', ['popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending, 'genres' => $genres]);
+        return view('landing', ['popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending, ]);
     }
 }

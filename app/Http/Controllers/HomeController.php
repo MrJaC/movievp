@@ -23,10 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $popularMovies = app(Movie::class)->getPopularMovies();
 
-        error_log(print_r($popularMovies,true));
-        $popularMovies;
 
         return view('home');
     }

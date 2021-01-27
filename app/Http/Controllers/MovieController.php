@@ -17,8 +17,7 @@ class MovieController extends Controller
         //slice movie review because lazy.
 
         $mR = array_slice($movieReview['results'],0, 4, true);
-        error_log(print_r($movieData,true));
-        error_log(print_r($mR,true));
+
         return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
 
     }
