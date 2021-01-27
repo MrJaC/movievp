@@ -1,7 +1,7 @@
 <!-- Header -->
 <header>
 
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-expand-md navbar-light  bg-light">
         <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name')}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
