@@ -26,8 +26,9 @@
             },
 
             success: function(data) {
-                alert(data.success);
-                location.reload;
+               if(data.success){
+
+               }
             },
             error: function(data){
                 alert(error.failed);
@@ -38,7 +39,9 @@
     });
 
     $(document).ready( function () {
-    $('#table-wl').DataTable();
+    $('#table-wl').DataTable({
+        responsive: true
+    });
 } );
 
     </script>

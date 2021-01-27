@@ -24,8 +24,6 @@ class Movie extends Model
         $baseUrl = env('TMDB_BASEURL');
         $apiKey = env('TMDB_APIKEY');
 
-
-
         $combined = $baseUrl . 'movie/popular?api_key=' . $apiKey;
         $response = Http::get($combined)->json();
 
@@ -109,8 +107,6 @@ class Movie extends Model
      */
     public function updateWatchListMovie($data)
     {
-
-
         //check if record exist
         if ($a = DB::table('watchlist')->where($data, 1)->exists()) {
             //remove record

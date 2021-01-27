@@ -11,14 +11,14 @@
 </section>
 <div class="container">
  <div class="row d-flex min-vh-100 mx-md-n5 p-5 m-5" >
-    <div class="col">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
               Your Watchlist
             </div>
             <div class="card-body">
 
-              <table id="table-wl"class="table">
+              <table id="table-wl" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                   <tr>
                     <th>#</th>

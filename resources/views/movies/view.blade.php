@@ -50,23 +50,6 @@
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <ul class="list-inline">
-                    @foreach ($data['production_companies'] as $prodClist )
-                    <li class="list-inline-item">
-                        @if ($prodClist['logo_path'] == null)
-                            {{ $prodClist['name']}}
-                        @else
-                        <img src="https://image.tmdb.org/t/p/original{{ $prodClist['logo_path']}}" class="img-fluid logo-company"></li>
-                        @endif
-
-
-                    @endforeach
-
-                  </ul>
-        </div>
-    </div>
 </section>
 <section id="reviews">
     <div class="container">
@@ -101,5 +84,27 @@
         </div>
 
     </div>
+</section>
+<section id="review-container">
+    <div class="container-fluid">
+    <div class="row  justify-content-center  m-5">
+        <div class="col text-center">
+            <h4 class="display-4">Companies involved</h4>
+            <ul class="list-inline">
+                @foreach ($data['production_companies'] as $prodClist )
+                <li class="list-inline-item">
+                    @if ($prodClist['logo_path'] == null)
+                        {{ $prodClist['name']}}
+                    @else
+                    <img src="https://image.tmdb.org/t/p/original{{ $prodClist['logo_path']}}" class="img-fluid logo-company"></li>
+                    @endif
+
+
+                @endforeach
+
+              </ul>
+    </div>
+</div>
+</div>
 </section>
 @endsection
