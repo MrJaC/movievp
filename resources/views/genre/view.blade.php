@@ -5,17 +5,17 @@
     <div class="container">
         <div class="row border-top-0 mx-md-n5 p-5">
         <div class="col">
-            <h3>Most dular :: Movies</h3>
+            <h3>Most Popular {{ $title }} Movies</h3>
         </div>
         </div>
     </div>
 
 <!-- Movie Cards -->
-<div class="container-fluid">
+<div class="container">
 
-<div class="row justify-content-center">
-@foreach ( $data[] as $d )
-<div class="col-md-2">
+<div class="row justify-content-center pb-5 ">
+@foreach ( $data as $d )
+<div class="col-md-3">
     <div class="card-group">
     <div class="card text-white hover-img">
         <img src="https://image.tmdb.org/t/p/original{{ $d['poster_path'] }}" class="card-img-top" alt="...">
