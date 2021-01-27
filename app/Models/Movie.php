@@ -63,13 +63,17 @@ class Movie extends Model
     public function updateWatchListMovie($data){
 
 
-        if($a = DB::table('watchlist')->insert($data)){
-            return true;
-            error_log(print_r($a,true));
-        }else{
-            return false;
-        }
+          //check if record exist
+          if ($a = DB::table('watchlist')->where($data, 1)->exists()) {
+            //remove record
+            DB::table('watchlist')->where($data)->delete();
 
+            return false;
+        }else{
+            //insert the record.
+            DB::table('watchlist')->insert($data);
+            return true;
+        }
 
     }
 }

@@ -38,12 +38,15 @@ class MovieController extends Controller
         );
         error_log(print_r($data,true));
         $insert = app(Movie::class)->updateWatchListMovie($data);
-            if($insert == true){
+            if($insert == "1"){
                 error_log(print_r($insert,true));
+
                 return response()->json(['success' => 'Added to Watchlist!']);
+
+
             }else{
-                error_log(print_r($insert, true));
-                return response()->json(['error' => 'failed']);
+
+                return response()->json(['success' => 'Removed from Watchlist!']);
             }
 
     }
