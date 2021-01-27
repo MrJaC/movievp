@@ -38,8 +38,7 @@
 
 /* footer stuff */
 
-#footer-main {
-    height: 300px;
+.footer-main {
     background-color: #2c3e50;
 }
 

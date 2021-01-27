@@ -8,7 +8,7 @@
 
     @include('layouts.partials.header-scripts')
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
       @include('layouts.partials.menu')
       <!-- Content -->
     @yield('content')
