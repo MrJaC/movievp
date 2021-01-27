@@ -13,6 +13,6 @@ class GenresController extends Controller
     {
         $data = app(Movie::class)->getMovieViaGenre($id);
 
-        return view('genre.view', ['data' => $data['results'] , 'title' => $title]);
+        return view('genre.view', ['data' => $data['results'], 'title' => $title]);
     }
 }

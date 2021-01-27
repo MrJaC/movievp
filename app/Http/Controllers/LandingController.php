@@ -18,13 +18,9 @@ class LandingController extends Controller
     public function index()
     {
 
-
         //get popular movies
         $data = app(Movie::class)->getPopularMovies();
         $trendingData = app(Movie::class)->getTrendingMovies();
-
-
-
         //slice data
         $popularMovies = array_slice($data['results'], 0, 12, true);
         $trending = array_slice($trendingData['results'], 0, 12, true);
@@ -33,6 +29,6 @@ class LandingController extends Controller
 
         //error_log(print_r($trendingData, true));
 
-        return view('landing', ['popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending, ]);
+        return view('landing', ['popular' => $popularMovies, 'slider' => $slider, 'trending' => $trending,]);
     }
 }

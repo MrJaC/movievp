@@ -13,7 +13,7 @@ use DB;
 
 class Movie extends Model
 {
-
+    
     public function getPopularMovies()
     {
         $baseUrl = env('TMDB_BASEURL');
@@ -68,7 +68,7 @@ class Movie extends Model
         $apiKey = env('TMDB_APIKEY');
 
         $combined = $baseUrl . 'discover/movie?api_key=' . $apiKey . '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' . $id;
-        error_log(print_r($combined,true));
+        error_log(print_r($combined, true));
         $response = Http::get($combined)->json();
 
         return $response;

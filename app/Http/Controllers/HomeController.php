@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -28,7 +29,8 @@ class HomeController extends Controller
         return redirect('dashboard');
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
 
         //get data
         $id = Auth::id();
@@ -36,6 +38,6 @@ class HomeController extends Controller
         $data = app(Movie::class)->getWatchListData($id);
 
 
-        return view('dashboard.view' ,[ 'data' => $data]);
+        return view('dashboard.view', ['data' => $data]);
     }
 }
