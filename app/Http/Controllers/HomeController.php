@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Movie;
 use Illuminate\Support\Facades\Auth;
 
