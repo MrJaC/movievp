@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Movie;
-use App\Models\General;
+
 
 class LandingController extends Controller
 {
@@ -15,6 +15,11 @@ class LandingController extends Controller
     }
 
 
+    /**
+     * index
+     *
+     * @return void
+     */
     public function index()
     {
 

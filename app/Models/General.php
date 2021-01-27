@@ -10,6 +10,11 @@ class General extends Model
 {
     use HasFactory;
 
+    /**
+     * getCategories
+     *
+     * @return void
+     */
     public function getCategories()
     {
         $baseUrl = env('TMDB_BASEURL');

@@ -13,7 +13,12 @@ use DB;
 
 class Movie extends Model
 {
-    
+
+    /**
+     * getPopularMovies
+     *
+     * @return void
+     */
     public function getPopularMovies()
     {
         $baseUrl = env('TMDB_BASEURL');
@@ -27,6 +32,11 @@ class Movie extends Model
         return  $response;
     }
 
+    /**
+     * getTrendingMovies
+     *
+     * @return void
+     */
     public function getTrendingMovies()
     {
         $baseUrl = env('TMDB_BASEURL');
@@ -39,6 +49,12 @@ class Movie extends Model
         return $response;
     }
 
+    /**
+     * getSingleMovie
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getSingleMovie($id)
     {
         $baseUrl = env('TMDB_BASEURL');
@@ -50,6 +66,12 @@ class Movie extends Model
         return $response;
     }
 
+    /**
+     * getMovieReviews
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getMovieReviews($id)
     {
 
@@ -61,6 +83,12 @@ class Movie extends Model
 
         return $response;
     }
+    /**
+     * getMovieViaGenre
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getMovieViaGenre($id)
     {
 
@@ -68,11 +96,17 @@ class Movie extends Model
         $apiKey = env('TMDB_APIKEY');
 
         $combined = $baseUrl . 'discover/movie?api_key=' . $apiKey . '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' . $id;
-        error_log(print_r($combined, true));
+
         $response = Http::get($combined)->json();
 
         return $response;
     }
+    /**
+     * updateWatchListMovie
+     *
+     * @param  mixed $data
+     * @return void
+     */
     public function updateWatchListMovie($data)
     {
 
@@ -89,6 +123,12 @@ class Movie extends Model
             return true;
         }
     }
+    /**
+     * checkWLM
+     *
+     * @param  mixed $data
+     * @return void
+     */
     public function checkWLM($data)
     {
         if ($a = DB::table('watchlist')->where($data, 1)->exists()) {
@@ -96,12 +136,19 @@ class Movie extends Model
         }
     }
 
+    /**
+     * getWatchListData
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getWatchListData($id)
     {
 
         //get user watch list
 
         $data = DB::table('watchlist')->select()->where('watchlist.user_id', '=', $id)->get();
+
         return $data;
     }
 }

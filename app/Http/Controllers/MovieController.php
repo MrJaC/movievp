@@ -10,6 +10,13 @@ class MovieController extends Controller
 {
 
 
+    /**
+     * index
+     *
+     * @param  mixed $id
+     * @param  mixed $title
+     * @return void
+     */
     public function index($id, $title)
     {
 
@@ -43,6 +50,12 @@ class MovieController extends Controller
     }
 
 
+    /**
+     * watchListARP
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function watchListARP(Request $request)
     {
 
