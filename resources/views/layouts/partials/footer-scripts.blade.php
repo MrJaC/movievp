@@ -26,10 +26,12 @@
             },
 
             success: function(data) {
-                setInterval('location.reload()', 1000);
+              if(data.success){
+                  location.reload();
+              }
             },
             error: function(data){
-                alert(error.failed);
+                alert(data.failed);
             }
 
         });
@@ -37,9 +39,8 @@
     });
 
     $(document).ready( function () {
-    $('#table-wl').DataTable({
-        responsive: true
-    });
+    $('#table-wl').DataTable();
+    responsive: true
 } );
 
     </script>

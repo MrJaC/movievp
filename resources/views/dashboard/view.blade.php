@@ -37,7 +37,7 @@
 
                   <tr>
                     <td>{{$d->id}}</td>
-                    <td><button type="submit" data-id="{{ $d->movie_id }}" data-name="{{ $d->title }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-trash"></i></button></td>
+                    <td><button type="submit" data-id="{{ $d->movie_id }}" data-name="{{ $d->title }}" data-image="{{ $d->image_path }}" id="movie-id" class="btn btn-primary btn-submit"><i class="bi bi-trash"></i></button></td>
                     <td class="img-wl"><img src="https://image.tmdb.org/t/p/original{{ $d->image_path }}" alt="..."></td>
                     <td><a href="{{ route('view-movie', ['id' => $d->movie_id, 'title' => $d->title])}}">View</a></td>
                     <td>{{$d->movie_id}}</td>
