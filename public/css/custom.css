@@ -32,6 +32,7 @@ body {
 .image img {
     height: 340px;
     width: 260px;
+    position: relative;
 }
 
 .logo-company {
@@ -84,8 +85,9 @@ body {
 /* hover image*/
 
 .hover-img {
-    height: 400px;
+    height: 100%;
     overflow: hidden;
+    max-height: 400px;
 }
 
 .hover-img img {

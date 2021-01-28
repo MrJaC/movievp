@@ -15,7 +15,7 @@
 
 <section id="overview">
     <div class="container">
-        <div class="row p-3 mb-5  mt-5">
+        <div class="row  justify-content-center p-3 mb-5  mt-5">
             <div class="col-6 text-white">
                 <h5>Overview</h5>
                 <h3> {{ $data['original_title']}}</h3>
