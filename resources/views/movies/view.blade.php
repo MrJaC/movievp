@@ -6,7 +6,7 @@
         <!-- Hero Image -->
         <div class="banner">
         <div class="banner-img-h">
-            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="d-block w-100" alt="...">
+            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="d-block w-100 h-img" alt="...">
         </div>
     </div>
 </div>

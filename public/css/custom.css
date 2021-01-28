@@ -9,6 +9,11 @@ body {
     height: 100%;
     width: 100%;
     max-height: 800px;
+    background-image: linear-gradient(to right, rgba(5.10%, 5.88%, 7.84%, 1.00) 150px, rgba(5.10%, 5.88%, 7.84%, 0.84) 100%);
+}
+
+.h-img img {
+    background-image: linear-gradient(to right, rgba(5.10%, 5.88%, 7.84%, 1.00) 150px, rgba(5.10%, 5.88%, 7.84%, 0.84) 100%);
 }
 
 #featured-popular {
