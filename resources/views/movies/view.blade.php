@@ -16,10 +16,6 @@
 <section id="overview">
     <div class="container">
         <div class="row p-3 mb-5 justify-content-center">
-            <div class="col-6 text-left image">
-
-                <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="img-thumbnail rounded" alt="...">
-            </div>
             <div class="col-6 text-white">
                 <h5>Overview</h5>
                 <h3> {{ $data['original_title']}}</h3>
@@ -35,6 +31,14 @@
 
             @endguest
             </div>
+            <div class="col-6 text-left image">
+
+                    <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="card-img-top" alt="...">
+
+
+
+            </div>
+
 
         </div>
         <div class="row">
