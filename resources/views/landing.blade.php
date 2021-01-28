@@ -65,9 +65,9 @@
 <!-- End Categories -->
 <!-- Featured - Popular -->
 <section id="featured-popular">
-        <div class="container">
-            <div class="row border-top-0 mx-md-n5 p-5">
-            <div class="col">
+        <div class="container-fluid">
+            <div class="row justify-content-center m-3">
+                <div class="col-12 text-white">
                 <h3>Most Popular Movies</h3>
             </div>
             </div>
@@ -76,19 +76,21 @@
 <!-- Movie Cards -->
 <div class="container-fluid">
 
-<div class="row justify-content-center">
+<div class="row justify-content-center m-3">
     @foreach ( $popular as $pop )
     <div class="col-md-2">
-        <div class="card-group">
-        <div class="card text-white hover-img">
+        <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}">
+        <div class="card-group pb-3">
+        <div class="card text-white no-border hover-img">
             <img src="https://image.tmdb.org/t/p/original{{ $pop['poster_path'] }}" class="card-img-top" alt="...">
             <div class="card-img-overlay d-flex flex-column">
               <h5 class="card-title">{{ $pop['original_title']}}</h5>
               <p class="card-text text-truncate">{{ $pop['overview']}}</p>
-              <a href="{{ route('view-movie', ['id' => $pop['id'], 'title' => $pop['original_title']])}}" class="btn btn-dark mt-auto">View </a>
+
             </div>
           </div>
         </div>
+    </a>
 
     </div>
     @endforeach
@@ -100,27 +102,29 @@
 
 <!-- Trending -->
 <section id="trending">
-    <div class="container">
-        <div class="row border-top-0 mx-md-n5 p-5 ">
-        <div class="col">
+    <div class="container-fluid">
+        <div class="row justify-content-center m-3">
+        <div class="col-12 text-white">
             <h3>Currently Trending this Week</h3>
         </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row justify-content-center pb-5 ">
+        <div class="row justify-content-center m-3">
             @foreach ( $trending as $trend )
             <div class="col-md-2">
-                <div class="card-group">
-                <div class="card text-white  hover-img">
+                <a href="{{ route('view-movie', ['id' => $trend['id'], 'title' => $trend['original_title']])}}">
+                <div class="card-group pb-3">
+                <div class="card text-white  no-border hover-img">
                     <img src="https://image.tmdb.org/t/p/original{{ $trend['poster_path'] }}" class="card-img-top" alt="...">
                     <div class="card-img-overlay d-flex flex-column">
                       <h5 class="card-title">{{ $trend['original_title']}}</h5>
                       <p class="card-text text-truncate">{{ $trend['overview']}}</p>
-                      <a href="{{ route('view-movie', ['id' => $trend['id'], 'title' => $trend['original_title']])}}" class="btn btn-dark mt-auto">View </a>
+
                     </div>
                   </div>
                 </div>
+            </a>
 
             </div>
             @endforeach

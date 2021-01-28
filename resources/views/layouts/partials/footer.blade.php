@@ -1,5 +1,5 @@
   <!-- FOOTER -->
-  <footer class="text-light footer-main text-center text-lg-start">
+  <footer class="text-light  text-center text-lg-start">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
@@ -35,7 +35,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center text-light p-3 copy-right">
+    <div class="text-center text-light p-3">
       © 2021 Copyright:
       <a class="text-light" href="#">Something</a>
     </div>
