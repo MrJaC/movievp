@@ -55,34 +55,37 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-<section id="featured-dular">
-    <div class="container">
-        <div class="row border-top-0 mx-md-n5 p-5">
-        <div class="col">
+<section id="featured-popular">
+    <div class="container-fluid">
+        <div class="row justify-content-center m-3">
+            <div class="col-12 text-white">
             <h3>Most Popular {{ $title }} Movies</h3>
         </div>
         </div>
     </div>
 
 <!-- Movie Cards -->
-<div class="container">
+<div class="container-fluid">
 
-<div class="row justify-content-center pb-5 ">
+<div class="row justify-content-center m-3">
 @foreach ( $data as $d )
-<div class="col-md-3">
-    <div class="card-group">
-    <div class="card text-white hover-img">
+<div class="col-md-2">
+    <a href="{{ route('view-movie', ['id' => $d['id'], 'title' => $d['original_title']])}}" >
+    <div class="card-group  pb-3">
+    <div class="card text-white  no-border hover-img">
         <img src="https://image.tmdb.org/t/p/original{{ $d['poster_path'] }}" class="card-img-top" alt="...">
         <div class="card-img-overlay d-flex flex-column">
           <h5 class="card-title">{{ $d['original_title']}}</h5>
           <p class="card-text text-truncate">{{ $d['overview']}}</p>
-          <a href="{{ route('view-movie', ['id' => $d['id'], 'title' => $d['original_title']])}}" class="btn btn-dark mt-auto">View </a>
+
         </div>
       </div>
     </div>
-
+</a>
 </div>
 @endforeach
+</div>
+
 </div>
 
 </div>
