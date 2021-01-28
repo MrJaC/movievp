@@ -15,9 +15,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genres</a>
 
-            <div class="dropdown-menu">
+            <div class="dropdown-menu text-white bg-dark">
                 @foreach ( $genres['genres'] as $g )
-              <a class="dropdown-item" href="{{ route('genre', ['id' => $g['id'], 'name' => $g['name']])}}">{{ $g['name']}}</a>
+              <a class="dropdown-item text-white" href="{{ route('genre', ['id' => $g['id'], 'name' => $g['name']])}}">{{ $g['name']}}</a>
 
               @endforeach
             </div>
