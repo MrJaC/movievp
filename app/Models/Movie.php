@@ -81,6 +81,26 @@ class Movie extends Model
 
         return $response;
     }
+    
+    /**
+     * getSimilarMovie
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function getSimilarMovie($id){
+
+
+        $baseUrl = env('TMDB_BASEURL');
+        $apiKey = env('TMDB_APIKEY');
+
+
+        $combined = $baseUrl . 'movie/' . $id . '/similar?api_key=' . $apiKey;
+        $response = Http::get($combined)->json();
+
+        return $response;
+
+    }
     /**
      * getMovieViaGenre
      *
