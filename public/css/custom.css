@@ -35,8 +35,8 @@ body {
 /*img size - movie view*/
 
 .image img {
-    height: 340px;
-    width: 260px;
+    height: 450px;
+    width: 300px;
     position: relative;
 }
 
@@ -109,7 +109,6 @@ body {
 
 .no-border {
     border: none !important;
-    aborder-radius: 0 !important;
 }
 
 #cat-fas {

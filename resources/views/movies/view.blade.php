@@ -6,7 +6,7 @@
         <!-- Hero Image -->
         <div class="banner">
         <div class="banner-img-h">
-            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="d-block w-100 h-img" alt="...">
+            <img src="https://image.tmdb.org/t/p/original{{ $data['backdrop_path'] }}" class="d-block w-100" alt="...">
         </div>
     </div>
 </div>
@@ -72,8 +72,8 @@
         </div>
         <div class="row justify-content-center">
             @foreach ($reviews as $r )
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px;">
+            <div class="col-md-12">
+                <div class="card mb-5">
                     <div class="row no-gutters">
                       <div class="col-md-4">
                         <img src="{{ url('img/default.png')}}" alt="..." class="img-fluid">
