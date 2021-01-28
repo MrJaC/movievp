@@ -3,7 +3,7 @@
 <!-- Carousel -->
 <main role="main">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
       <ol class="carousel-indicators">
           @foreach ($slider as $s )
           @if ($loop->first)
@@ -25,10 +25,10 @@
                 <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
 
             <div class="container">
-                <div class="carousel-caption">
+                <div class="carousel-caption text-left d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
-                  <p class="text-truncate">{{ $s['overview']}}</p>
-                  <p><a class="btn btn-lg btn-md btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
+
+                  <p><a class="btn btn-md  btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View</a></p>
                 </div>
               </div>
             </div>
@@ -36,10 +36,10 @@
             <div class="carousel-item">
                 <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
 
-            <div class="container">
-                <div class="carousel-caption d-none d-md-block">
+            <div class="container-fluid">
+                <div class="carousel-caption text-left d-none d-md-block">
                   <h1>{{ $s['original_title']}}</h1>
-                  <p class="text-truncate">{{ $s['overview']}}</p>
+
                   <p><a class="btn btn-md btn btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View</a></p>
                 </div>
               </div>
