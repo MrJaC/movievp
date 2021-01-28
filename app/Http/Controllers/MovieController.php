@@ -28,20 +28,23 @@ class MovieController extends Controller
             );
             $movieData = app(Movie::class)->getSingleMovie($id);
             $movieReview = app(Movie::class)->getMovieReviews($id);
+            $similarData = app(Movie::class)->getSimilarMovie($id);
             $check = app(Movie::class)->checkWLM($data);
             //slice movie review
-            error_log(print_r($check, true));
+            error_log(print_r($movieData, true));
             $mR = array_slice($movieReview['results'], 0, 4, true);
+            $sM = array_slice($similarData['results'], 0, 6, true);
 
-            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR, 'check' => $check]);
+            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR, 'similar' => $sM,'check' => $check]);
         } else {
             $movieData = app(Movie::class)->getSingleMovie($id);
             $movieReview = app(Movie::class)->getMovieReviews($id);
+            $similarData = app(Movie::class)->getSimilarMovie($id);
             //slice movie review
 
             $mR = array_slice($movieReview['results'], 0, 4, true);
-
-            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR]);
+            $sM = array_slice($similarData['results'], 0, 6, true);
+            return view('movies.view', ['data' =>  $movieData, 'reviews' => $mR, 'similar' => $sM ]);
         }
     }
 

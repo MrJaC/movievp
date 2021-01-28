@@ -15,13 +15,24 @@
 
 <section id="overview">
     <div class="container">
-        <div class="row p-3 mb-5 justify-content-center">
+        <div class="row p-3 mb-5  mt-5">
             <div class="col-6 text-white">
                 <h5>Overview</h5>
                 <h3> {{ $data['original_title']}}</h3>
                 <p> {{ $data['overview']}}</p>
+                @foreach ( $data['genres'] as $g )
+                <div>
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item">{{ $g['name'] }}</li>
+                        <li class="list-inline-item"><li>
+                    </ul>
+                </div>
+                @endforeach
+                <p>Budget: {{ $data['budget']}}</p>
                 @guest
                 Sign in for watch list
+
+
              @else
              @if ($check == 1)
              <button type="submit" data-id="{{ $data['id'] }}" data-name="{{ $data['original_title'] }}" data-image="{{ $data['poster_path'] }}" id="movie-id" class="btn btn-primary btn-submit text-center"><i class="bi bi-star"></i> Remove </button>
@@ -31,15 +42,9 @@
 
             @endguest
             </div>
-            <div class="col-6 text-left image">
-
+            <div class="col-6  image">
                     <img src="https://image.tmdb.org/t/p/original{{ $data['poster_path'] }}" class="card-img-top" alt="...">
-
-
-
             </div>
-
-
         </div>
         <div class="row">
             <div class="col-4">
@@ -47,7 +52,7 @@
             </div>
             <div class="col-4 text-white">
 
-                    <h1 class="display-4">Budget: {{ $data['budget']}}</h1>
+
 
             </div>
             <div class="col-4">
@@ -55,6 +60,9 @@
             </div>
         </div>
 </section>
+@if (empty($reviews))
+
+@else
 <section id="reviews">
     <div class="container">
         <div class="row mx-md-n5 p-5">
@@ -89,6 +97,39 @@
 
     </div>
 </section>
+@endif
+
+<section id="similar-movie">
+    <div class="container-fluid">
+        <div class="row justify-content-center m-3">
+            <div class="col-12 text-white">
+            <h4>Similar Movies</h4>
+        </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center m-3">
+        @foreach ( $similar as $sim )
+        <div class="col-lg-2">
+            <a href="{{ route('view-movie', ['id' => $sim['id'], 'title' => $sim['original_title']])}}">
+            <div class="card-group pb-3">
+            <div class="card text-white no-border hover-img">
+                <img src="https://image.tmdb.org/t/p/original{{ $sim['poster_path'] }}" class="card-img-top" alt="...">
+                <div class="card-img-overlay d-flex flex-column">
+                  <h5 class="card-title">{{ $sim['original_title']}}</h5>
+                  <p class="card-text text-truncate">{{ $sim['overview']}}</p>
+
+                </div>
+              </div>
+            </div>
+        </a>
+
+        </div>
+        @endforeach
+    </div>
+</div>
+</section>
+<!--
 <section id="review-container">
     <div class="container-fluid">
     <div class="row  justify-content-center  m-5">
@@ -111,4 +152,5 @@
 </div>
 </div>
 </section>
+-->
 @endsection
