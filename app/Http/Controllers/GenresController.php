@@ -20,6 +20,8 @@ class GenresController extends Controller
     {
         $data = app(Movie::class)->getMovieViaGenre($id);
 
-        return view('genre.view', ['data' => $data['results'], 'title' => $title]);
+        $slider = array_slice($data['results'], 0, 4, true);
+        
+        return view('genre.view', ['data' => $data['results'], 'title' => $title, 'slider' => $slider]);
     }
 }
