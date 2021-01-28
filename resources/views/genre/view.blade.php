@@ -22,10 +22,10 @@
               <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
 
           <div class="container">
-              <div class="carousel-caption">
+              <div class="carousel-caption text-left d-none d-md-block">
                 <h1>{{ $s['original_title']}}</h1>
                 <p class="text-truncate">{{ $s['overview']}}</p>
-                <p><a class="btn btn-lg btn-md btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View..</a></p>
+                <p><a class="btn btn-md btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View</a></p>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@
               <img src="https://image.tmdb.org/t/p/original{{ $s['backdrop_path'] }}" class="d-block w-100" alt="...">
 
           <div class="container">
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption text-left d-none d-md-block">
                 <h1>{{ $s['original_title']}}</h1>
                 <p class="text-truncate">{{ $s['overview']}}</p>
                 <p><a class="btn btn-md btn btn-dark" href="{{ route('view-movie', ['id' => $s['id'], 'title' => $s['original_title']])}}">View</a></p>
@@ -57,9 +57,9 @@
   </div>
 <section id="featured-popular">
     <div class="container-fluid">
-        <div class="row justify-content-center m-3">
+        <div class="row justify-content-center m-3 p-4">
             <div class="col-12 text-white">
-            <h3>Most Popular {{ $title }} Movies</h3>
+            <h4>Most Popular {{ $title }} Movies</h4>
         </div>
         </div>
     </div>
